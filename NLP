@@ -1,0 +1,170 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyN23OsL8cF78s5QqABmM5VT",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/liz435/NLP/blob/main/NLP\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 16,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "8WG4YNiAus1c",
+        "outputId": "47224828-2bbb-42e3-cc76-3ab0c8856f94"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "NLTK Downloader\n",
+            "---------------------------------------------------------------------------\n",
+            "    d) Download   l) List    u) Update   c) Config   h) Help   q) Quit\n",
+            "---------------------------------------------------------------------------\n",
+            "Downloader> d\n",
+            "\n",
+            "Download which package (l=list; x=cancel)?\n",
+            "  Identifier> averaged_perceptron_tagger\n"
+          ]
+        },
+        {
+          "output_type": "stream",
+          "name": "stderr",
+          "text": [
+            "    Downloading package averaged_perceptron_tagger to\n",
+            "        /root/nltk_data...\n",
+            "      Unzipping taggers/averaged_perceptron_tagger.zip.\n"
+          ]
+        },
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "\n",
+            "---------------------------------------------------------------------------\n",
+            "    d) Download   l) List    u) Update   c) Config   h) Help   q) Quit\n",
+            "---------------------------------------------------------------------------\n",
+            "Downloader> q\n"
+          ]
+        },
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "True"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 16
+        }
+      ],
+      "source": [
+        "import nltk\n",
+        "nltk.download()"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "sentence = \"Hi, who are you?\""
+      ],
+      "metadata": {
+        "id": "QQlS6D8mwP5F"
+      },
+      "execution_count": 17,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "tokens = nltk.word_tokenize(sentence)\n",
+        "tokens"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "u60NfOuQwfbP",
+        "outputId": "27aed43b-7664-4e69-d790-3502e992d412"
+      },
+      "execution_count": 18,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "['Hi', ',', 'who', 'are', 'you', '?']"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 18
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "tagged = nltk.pos_tag(tokens)\n",
+        "tagged"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "zH_ZAs1RwsZj",
+        "outputId": "5a6733d3-7a10-4be8-e755-5862a05a3206"
+      },
+      "execution_count": 20,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[('Hi', 'NNP'),\n",
+              " (',', ','),\n",
+              " ('who', 'WP'),\n",
+              " ('are', 'VBP'),\n",
+              " ('you', 'PRP'),\n",
+              " ('?', '.')]"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 20
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "qbMhiKG0xt0C"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
